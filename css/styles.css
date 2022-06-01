@@ -159,6 +159,7 @@ img{
     color: var(--accent-color);
 
 }
+/* Нижнє підчеркування */
 
 .header-current::after{
     position: absolute;
@@ -362,7 +363,6 @@ color: var(--accent-color);
 
     margin-bottom: 12px;
 
-/* color: #212121; */
 
 }
 
@@ -377,6 +377,8 @@ color: var(--accent-color);
     display: block;
     flex-direction: column;
     margin-bottom: 10px;
+
+    transition: border-color var(--transition-duration) var(--transition-timing-function);
 }
 
 
@@ -393,7 +395,7 @@ color: var(--accent-color);
 .form-container{
     position: relative;
     display: block;
-    
+    /* display: flex; */
 }
 
 .form-input{
@@ -411,16 +413,18 @@ color: var(--accent-color);
 }
 
 
-.form-input:hover,
-.form-input:focus,
+.form-field:hover .form-input,
+.form-field:focus-within .form-input,
 .form-comment:hover,
-.form-comment:focus{
-    border-color: var(--accent-color);
+.form-comment:focus-within {
+    border-color: var(--accent-color);   
 }
-.form-input:focus ~ .modal-icon,
-.form-input:hover ~ .modal-icon{
+
+.form-field:hover .modal-icon,
+.form-field:focus-within .modal-icon{
     fill: var(--accent-color);
 }
+
 
 .modal-icon{
     position: absolute;
@@ -434,10 +438,6 @@ color: var(--accent-color);
     transition: fill var(--transition-duration) var(--transition-timing-function);
 }
 
-.modal-icon:hover,
-.modal-icon:focus{
-    fill: var(--accent-color);
-}
 
 .form-comment{
     width: 100%;
@@ -822,6 +822,7 @@ transition: background-color var(--transition-duration) var(--transition-timing-
 .socials-title{
     font-weight: 700; 
     color: var(--accent-white-color);
+    text-transform: uppercase;
 
     margin-bottom: 20px;
 }
